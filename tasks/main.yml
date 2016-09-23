@@ -1,0 +1,13 @@
+---
+# tasks file for nordvpn
+- name: installs openvpn
+  apt: name=openvpn state=latest cache_valid_time=7200 update_cache=yes
+- name: sets openvpn config
+  template: dest=/etc/default/openvpn force=yes mode=0644 src=../templates/openvpn.j2
+- name: generates login file
+  template: dest=/etc/openvpn/login force=yes mode=0600 src=../templates/login.j2
+- name: downloads script
+  git: repo="https://github.com/ieguiguren/nordvpn.git" dest=/tmp/nordvpn clone=yes
+- name: executes getter script
+  shell: "/tmp/nordvpn/update-nordvpn.sh"
+  notify:  restart openvpn

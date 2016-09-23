@@ -1,0 +1,4 @@
+---
+# handlers file for nordvpn
+- name: restart openvpn
+  service: name=openvpn state=restarted

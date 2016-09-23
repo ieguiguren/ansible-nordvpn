@@ -1,0 +1,11 @@
+---
+# defaults file for nordvpn
+
+#user: NordVPN user (email) - defaults NULL
+vpnuser: NULL
+#password: NordVPN password - defaults NULL
+vpnpassword: NULL
+#default VPN: the VPN you want your destiny uses from boot up - defaults None
+autostart:  none
+# openvpn arguments - defaults empty
+optargs: ''

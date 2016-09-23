@@ -1,0 +1,8 @@
+---
+- hosts: all
+  remote_user: vagrant
+  become: true
+  vars:
+  - ansible_pass: vagrant
+  roles:
+    - nordvpn
